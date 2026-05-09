@@ -1,0 +1,347 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+
+  /* 🌌 Main dim blue background like login */
+  background: radial-gradient(circle at top, #1e3a5f, #0f172a);
+  color: #eaf2ff;
+}
+
+/* ================= GLOWING BACKGROUND BLOBS ================= */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.55;
+  z-index: -1;
+}
+
+/* BLUE GLOW */
+body::before {
+  top: 10%;
+  left: 10%;
+  background: rgba(106, 169, 255, 0.35);
+}
+
+/* YELLOW GLOW */
+body::after {
+  bottom: 10%;
+  right: 10%;
+  background: rgba(255, 214, 107, 0.25);
+}
+
+/* ================= NAVBAR ================= */
+.custom-navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(106, 169, 255, 0.2);
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+}
+
+.logo {
+  font-weight: 800;
+  color: #ffd66b;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #cfe3ff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffd66b;
+}
+
+/* ================= HERO ================= */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  padding-top: 80px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #eaf2ff;
+}
+
+.hero-text span {
+  color: #ffd66b;
+}
+
+.hero-text p {
+  color: #cfe3ff;
+  margin-top: 10px;
+}
+
+/* ================= BUTTONS ================= */
+.hero-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary-custom {
+  background: #6aa9ff;
+  color: #0f172a;
+  padding: 12px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-primary-custom:hover {
+  background: #ffd66b;
+  transform: translateY(-3px);
+}
+
+.btn-outline-custom {
+  border: 2px solid #ffd66b;
+  color: #ffd66b;
+  padding: 12px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-outline-custom:hover {
+  background: #ffd66b;
+  color: #0f172a;
+}
+
+/* ================= PROFILE IMAGE ================= */
+.profile-image {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 5px solid #ffd66b;
+  box-shadow: 0 0 25px rgba(106, 169, 255, 0.5);
+
+  transition: 0.4s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 40px rgba(255, 214, 107, 0.6);
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+  background: transparent;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  color: #eaf2ff;
+  margin-bottom: 20px;
+}
+
+/* ================= PROJECT SECTION ================= */
+.projects-section {
+  background: transparent;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+/* ================= GLASS PROJECT CARDS ================= */
+.project-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(106, 169, 255, 0.25);
+  border-radius: 18px;
+
+  padding: 20px;
+  transition: 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 40px rgba(106, 169, 255, 0.25);
+}
+
+.project-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  color: #eaf2ff;
+}
+
+.project-card p {
+  color: #cfe3ff;
+}
+
+/* ================= TAGS ================= */
+.tags {
+  margin: 10px 0;
+}
+
+.tags span {
+  display: inline-block;
+  background: rgba(106, 169, 255, 0.25);
+  color: #ffd66b;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  margin: 3px;
+}
+
+/* ================= PROJECT BUTTONS ================= */
+.project-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.project-buttons a {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.project-buttons a:first-child {
+  border: 2px solid #6aa9ff;
+  color: #eaf2ff;
+}
+
+.project-buttons a:first-child:hover {
+  background: #6aa9ff;
+  color: #0f172a;
+}
+
+.project-buttons a:last-child {
+  background: #ffd66b;
+  color: #0f172a;
+}
+
+.project-buttons a:last-child:hover {
+  opacity: 0.9;
+}
+
+/* ================= CONTACT ================= */
+.contact-section {
+  background: transparent;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(106, 169, 255, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ffd66b;
+  box-shadow: 0 0 10px rgba(255, 214, 107, 0.25);
+}
+
+.contact-form button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, #6aa9ff, #ffd66b);
+  color: #0f172a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #ffd66b;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .profile-image {
+    width: 180px;
+    height: 180px;
+    margin: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
