@@ -1,10 +1,16 @@
-
 import React, { useState } from 'react';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 import '../AdminLogin.css';
 
 const AdminLogin: React.FC = () => {
-  const [credentials, setCredentials] = useState({ email: '', password: '' });
+  const navigate = useNavigate();
+
+  const [credentials, setCredentials] = useState({
+    email: '',
+    password: '',
+  });
+
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -18,24 +24,37 @@ const AdminLogin: React.FC = () => {
     setError('');
 
     setTimeout(() => {
-      if (credentials.email === SECRET_EMAIL && credentials.password === SECRET_PASSWORD) {
-        localStorage.setItem('adminToken', 'super-secret-admin-token-2024');
-        window.location.href = '/admin';
+      if (
+        credentials.email === SECRET_EMAIL &&
+        credentials.password === SECRET_PASSWORD
+      ) {
+        localStorage.setItem(
+          'adminToken',
+          'super-secret-admin-token-2024'
+        );
+
+        // ✅ FIXED NAVIGATION
+        navigate('/admin');
       } else {
         setError('Invalid credentials!');
       }
+
       setLoading(false);
     }, 1200);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setCredentials({
+      ...credentials,
+      [e.target.name]: e.target.value,
+    });
   };
 
   return (
     <div className="login-wrapper">
       <div className="login-card">
-        
         <div className="text-center mb-4">
           <div className="icon-circle">
             <i className="bi bi-shield-lock-fill fs-1"></i>
@@ -64,7 +83,10 @@ const AdminLogin: React.FC = () => {
               required
             />
 
-            <button type="button" onClick={() => setShowPassword(!showPassword)}>
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+            >
               {showPassword ? <FiEyeOff /> : <FiEye />}
             </button>
           </div>

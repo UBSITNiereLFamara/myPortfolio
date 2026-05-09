@@ -36,17 +36,12 @@ const AdminDashboard: React.FC = () => {
     null
   );
 
-  // =========================
-  // INITIAL LOAD
-  // =========================
+
   useEffect(() => {
     checkAuth();
     loadMessages();
   }, []);
 
-  // =========================
-  // CHECK AUTH
-  // =========================
   const checkAuth = () => {
     const token =
       localStorage.getItem(

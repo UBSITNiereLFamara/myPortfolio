@@ -36,24 +36,15 @@ const App: React.FC = () => {
       <div className="App">
         <Routes>
           {/* HOME */}
-          <Route
-            path="/"
-            element={<Portfolio />}
-          />
+          <Route path="/" element={<Portfolio />} />
 
-          {/* CONTACT PAGE */}
-          <Route
-            path="/contact"
-            element={<Contact />}
-          />
+          {/* CONTACT */}
+          <Route path="/contact" element={<Contact />} />
 
           {/* ADMIN LOGIN */}
-          <Route
-            path="/admin-login"
-            element={<AdminLogin />}
-          />
+          <Route path="/admin-login" element={<AdminLogin />} />
 
-          {/* ADMIN DASHBOARD */}
+          {/* ADMIN DASHBOARD (FIXED ROUTE) */}
           <Route
             path="/admin"
             element={
@@ -63,11 +54,8 @@ const App: React.FC = () => {
             }
           />
 
-          {/* UNKNOWN ROUTES */}
-          <Route
-            path="*"
-            element={<Navigate to="/" replace />}
-          />
+          {/* FALLBACK */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </Router>
